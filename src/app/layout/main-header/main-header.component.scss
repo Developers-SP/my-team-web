@@ -1,0 +1,11 @@
+@import 'colors';
+@import 'sizes';
+
+.main-header {
+  background-color: $color_dark;
+  padding: 15px 30px;
+}
+
+.main-header__title {
+  font-size: $size_font_big;
+}

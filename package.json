@@ -1,62 +1,86 @@
 {
   "name": "my-team-web",
-  "version": "0.0.1",
-  "private": true,
-  "description": "Web Application To My Team",
-  "main": "index.js",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "i-g": "npm i -g @vue/cli @vue/cli-service-global node-sass"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
+  "private": true,
+  "contributors": [
+    {
+      "name": "codermarcos",
+      "email": "coder.marcos@gmail.com",
+      "url": "https://github.com/codermarcos"
+    }
+  ],
+  "homepage": "",
+  "description": "Web Application To My Team",
   "dependencies": {
-    "vue": "^2.5.13"
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-alpha.5",
-    "@vue/cli-plugin-eslint": "^3.0.0-alpha.5",
-    "@vue/cli-service": "^3.0.0-alpha.5",
-    "vue-template-compiler": "^2.5.13"
+    "@angular/cli": "1.6.6",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/language-service": "^5.2.0",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "^4.0.1",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.2",
+    "ts-node": "~4.1.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3"
   },
-  "vue": {
-    "lintOnSave": true
-  },
-  "babel": {
-    "presets": [
-      "@vue/app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ]
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Developers-SP/my-team-web.git"
+  "directories": {
+    "doc": "./docs"
   },
   "keywords": [
     "My-Team",
     "MyTeam",
     "My",
-    "Team"
+    "Team",
+    "cs-go",
+    "cs",
+    "go"
   ],
-  "author": "Developers-SP",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/Developers-SP/my-team-web/issues"
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Developers-SP/my-team-web.git"
   },
-  "homepage": "https://github.com/Developers-SP/my-team-web#readme"
+  "bugs": {
+     "url" : "https://github.com/Developers-SP/my-team-web/issues",
+     "email" : "coder.marcos@gmail.com"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
