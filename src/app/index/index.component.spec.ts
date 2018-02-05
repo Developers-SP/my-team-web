@@ -1,17 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { appModule } from '../../test.tool';
+//
+// Component
+//
 import { IndexComponent } from './index.component';
 
 describe('IndexComponent', () => {
   let component: IndexComponent;
   let fixture: ComponentFixture<IndexComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ IndexComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule(appModule).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(IndexComponent);

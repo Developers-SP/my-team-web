@@ -1,8 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
-
+//
+// Routes
+//
 import { AppRoutes } from './app.routes';
-
+//
+// Services
+//
+import { RequestService } from './services/resquest/request.service';
+import { PlayerService } from './services/api/player/player.service';
+//
+// Pages
+//
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 //
@@ -12,8 +22,8 @@ import { MainHeaderComponent } from './layout/index';
 
 @NgModule({
   declarations: [AppComponent, IndexComponent, MainHeaderComponent],
-  imports: [AppRoutes, BrowserModule],
-  providers: [],
+  imports: [AppRoutes, HttpModule, BrowserModule],
+  providers: [PlayerService, RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

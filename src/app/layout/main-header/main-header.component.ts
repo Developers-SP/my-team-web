@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-main-header',
   templateUrl: './main-header.component.html',
   styleUrls: ['./main-header.component.scss']
 })
-export class MainHeaderComponent implements OnInit {
+export class MainHeaderComponent {
   constructor() {}
 
-  ngOnInit() {
-  }
-
   login() {
-    location.href =
-      `https://steamcommunity.com/openid/login` +
+    return location.href =
+      `${environment.steam.login}` +
       `?openid.ns=http://specs.openid.net/auth/2.0` +
       `&openid.mode=checkid_setup` +
       `&openid.return_to=${environment.url}` +
