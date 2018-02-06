@@ -21,6 +21,7 @@ npm i
 
 ### Developing
 Use this commands to run project.
+
 [1](#developing-1)
 Run this command:
 ```bash
@@ -32,6 +33,7 @@ Navigate to [http://localhost:4200/](http://localhost:4200/).
 
 ### Scaffolding
 Use this commands to generate new componets.
+
 [1](#scaffolding-1)
 Run this command:
 ```bash
@@ -42,6 +44,7 @@ ng generate COMPONENT_TYPE COMPONENT-NAME
 
 ### Tests
 Use this commands to test project.
+
 [1](#tests-1)
 Run this command to test unit [Karma](https://karma-runner.github.io):
 ```bash
@@ -55,6 +58,7 @@ ng e2e
 
 ### Build
 Use this commands to build version to deploy.
+
 [1](#build-1)
 Build to development run this command:
 ```bash
