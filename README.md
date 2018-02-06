@@ -3,6 +3,7 @@ Application web to manager your team
 
 ### Getting Started 
 Use this commands to first run.
+
 [1](#getting-started-1) Install lastest current version of [Node here](https://nodejs.org/en/download/current/).
 
 [2](#getting-started-2) Clone the project, using this:
