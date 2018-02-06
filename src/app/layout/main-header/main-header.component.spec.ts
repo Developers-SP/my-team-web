@@ -35,11 +35,7 @@ describe('MainHeaderComponent', () => {
 
   describe('login', () => {
     it('has method', () => {
-      component.hasOwnProperty('login');
-    });
-
-    it('call steam', () => {
-      expect(component.login()).toBe('steamcommunity.com');
+      expect(typeof component.login).toEqual('function');
     });
   });
 });

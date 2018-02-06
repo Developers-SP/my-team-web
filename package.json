@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -67,12 +66,12 @@
     "go"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/Developers-SP/my-team-web.git"
+    "type": "git",
+    "url": "https://github.com/Developers-SP/my-team-web.git"
   },
   "bugs": {
-     "url" : "https://github.com/Developers-SP/my-team-web/issues",
-     "email" : "coder.marcos@gmail.com"
+    "url": "https://github.com/Developers-SP/my-team-web/issues",
+    "email": "coder.marcos@gmail.com"
   },
   "engines": {
     "node": ">= 4.0.0",
