@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Player } from '../../../models/player.model';
+import { RequestService } from '../../request.service';
+import { ResponseApi } from '../../../models/response.model';
 
 @Injectable()
 export class PlayerService {
+  private url = '/player';
 
-  constructor(http: Http) { }
+  constructor(public request: RequestService) { }
 
-  public login(id: string) {
-
+  async login(id: string): Promise<ResponseApi<Player>> {
+    return await (
+      this.request.post(`${this.url}/login`, { id })
+        .toPromise()
+        .then(response => response.json())
+    );
   }
+
 
 }

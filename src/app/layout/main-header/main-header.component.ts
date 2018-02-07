@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-main-header',
@@ -7,10 +7,8 @@ import { environment } from '../../../environments/environment.prod';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent {
-  constructor() {}
-
   login() {
-    return location.href =
+    location.href =
       `${environment.steam.login}` +
       `?openid.ns=http://specs.openid.net/auth/2.0` +
       `&openid.mode=checkid_setup` +

@@ -8,6 +8,7 @@ import { AppRoutes } from './app.routes';
 //
 // Services
 //
+import { RequestService } from './services/request.service';
 import { PlayerService } from './services/api/player/player.service';
 //
 // Pages
@@ -22,7 +23,7 @@ import { MainHeaderComponent } from './layout/index';
 @NgModule({
   declarations: [AppComponent, IndexComponent, MainHeaderComponent],
   imports: [AppRoutes, HttpModule, BrowserModule],
-  providers: [PlayerService],
+  providers: [RequestService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

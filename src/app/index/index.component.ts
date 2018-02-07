@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 import { PlayerService } from '../services/api/player/player.service';
+import { ResponseApi } from '../models/response.model';
+import { Player } from '../models/player.model';
 
 @Component({
   selector: 'app-index',
@@ -10,20 +12,25 @@ import { PlayerService } from '../services/api/player/player.service';
 })
 export class IndexComponent implements OnInit {
   constructor(
-    private route: ActivatedRoute,
-    private playerService: PlayerService
-  ) {}
+    private servicePlayer: PlayerService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(this.authenticate);
+    this.route.queryParams.subscribe(params => this.authenticate(params));
   }
 
-  authenticate(params) {
-    const url: string =
-      params['openid.identity'] || params['openid.claimed_id'];
-    if (!url) return;
-
-    const id = url.substring(environment.steam.id.length);
+  authenticate(params: any): void {
+    const id = this.getId(params);
     if (!id) return;
+
+    this.servicePlayer.login(id)
+      .then((res: ResponseApi<Player>) => console.log(res))
+      .catch((err: ResponseApi<any>) => console.exception(JSON.stringify(err)));
+  }
+
+  getId(params: any): string {
+    const url = params['openid.identity'] || params['openid.claimed_id'];
+    if (url) return url.substring(environment.steam.id.length);
   }
 }
