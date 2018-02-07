@@ -1,7 +1,21 @@
 <header class="row middle-xs between-xs main-header">
   <a class="main-header__title" routerLink="/">My Team</a>
-  <button class="button button--sign" title="Entrar com sua conta da steam" (click)="login()">
-    <i class="icon icon-steam"></i>
-    <span class="button__content">Entrar com steam</span>
-  </button>
+  <section *ngIf="player.logged" class="main-header__actions">
+    <img class="profile__photo" src="{{player.avatar}}" alt="profil photo">
+    <div class="main-header__profile">
+      <span class="profile__name">{{player.steam_name}}</span>
+      <br>
+      <button class="profile__button button button--text" title="Sair da sua conta" (click)="loggout()">
+        <i class="icon icon-exit"></i>
+        <span class="button__content">Sair</span>
+      </button>
+    </div>
+  </section>
+
+  <section *ngIf="!player.logged" class="main-header__sign">
+    <button *ngIf="!player.logged" class="button button--sign" title="Entrar com sua conta da steam" (click)="login()">
+      <i class="icon icon-steam"></i>
+      <span class="button__content">Entrar com steam</span>
+    </button>
+  </section>
 </header>

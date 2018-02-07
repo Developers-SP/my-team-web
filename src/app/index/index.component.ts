@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { PlayerService } from '../services/api/player/player.service';
-import { ResponseApi } from '../models/response.model';
+import { ResponseApi, Auth } from '../interfaces/index';
 import { Player } from '../models/player.model';
 
 @Component({
@@ -14,9 +14,10 @@ export class IndexComponent implements OnInit {
   constructor(
     private servicePlayer: PlayerService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
+    if (this.servicePlayer.player.id.length === 17) return;
     this.route.queryParams.subscribe(params => this.authenticate(params));
   }
 
@@ -24,8 +25,11 @@ export class IndexComponent implements OnInit {
     const id = this.getId(params);
     if (!id) return;
 
-    this.servicePlayer.login(id)
-      .then((res: ResponseApi<Player>) => console.log(res))
+    this.servicePlayer
+      .login(id)
+      .then(
+        (res: ResponseApi<Auth>) => (this.servicePlayer.player = res.result.player)
+      )
       .catch((err: ResponseApi<any>) => console.exception(JSON.stringify(err)));
   }
 

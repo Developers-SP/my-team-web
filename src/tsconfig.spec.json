@@ -12,6 +12,9 @@
   "files": [
     "test.ts"
   ],
+  "rules": {
+
+  },
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { PlayerService } from '../../services/index';
+import { Player } from '../../models/player.model';
 
 @Component({
   selector: 'app-main-header',
@@ -7,6 +9,16 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent {
+  constructor(private servicePlayer: PlayerService) {}
+
+  get player(): Player {
+    return this.servicePlayer.player;
+  }
+
+  loggout() {
+    this.servicePlayer.loggout();
+  }
+
   login() {
     location.href =
       `${environment.steam.login}` +

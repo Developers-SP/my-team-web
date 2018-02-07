@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'my-team';
-  src:  url('fonts/my-team.eot?pc23cj');
-  src:  url('fonts/my-team.eot?pc23cj#iefix') format('embedded-opentype'),
-    url('fonts/my-team.ttf?pc23cj') format('truetype'),
-    url('fonts/my-team.woff?pc23cj') format('woff'),
-    url('fonts/my-team.svg?pc23cj#my-team') format('svg');
+  src:  url('fonts/my-team.eot?vgyjie');
+  src:  url('fonts/my-team.eot?vgyjie#iefix') format('embedded-opentype'),
+    url('fonts/my-team.ttf?vgyjie') format('truetype'),
+    url('fonts/my-team.woff?vgyjie') format('woff'),
+    url('fonts/my-team.svg?vgyjie#my-team') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -56,6 +56,9 @@
 }
 .icon-cross:before {
   content: "\ea0f";
+}
+.icon-exit:before {
+  content: "\ea14";
 }
 .icon-steam:before {
   content: "\eaac";

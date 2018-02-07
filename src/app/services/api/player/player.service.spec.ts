@@ -11,9 +11,11 @@ describe('PlayerService', () => {
     expect(service).toBeTruthy();
   }));
 
-  describe('login', () => {
-    it('has method', inject([PlayerService], (service: PlayerService) => {
-      expect(typeof service.login).toEqual('function');
-    }));
-  });
+  it('has login', inject([PlayerService], (service: PlayerService) => {
+    expect(typeof service.login).toEqual('function');
+  }));
+
+  it('has player', inject([PlayerService], (service: PlayerService) => {
+    expect(typeof service.player).toEqual('object');
+  }));
 });

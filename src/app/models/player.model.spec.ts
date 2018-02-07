@@ -1,14 +1,25 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { Player } from './player.model';
 import { appModule } from '../../test.tool';
+import { Player } from './player.model';
 
-describe('PlayerService', () => {
+describe('PlayerModel', () => {
   it('should be created', () => {
     const player = new Player();
     expect(player).toBeTruthy();
   });
 
-  it('merger props', () => {
+  it('should be created fields', () => {
+    const player = new Player();
+    expect(player.id).toEqual('');
+    expect(player.steam_name).toEqual('');
+    expect(player.email).toEqual('');
+    expect(player.first_name).toEqual('');
+    expect(player.last_name).toEqual('');
+    expect(player.active).toEqual(1);
+    expect(player.avatar).toEqual('');
+  });
+
+  it('should be merge props', () => {
     const data = new Date();
     const _player = {
       id: '1',

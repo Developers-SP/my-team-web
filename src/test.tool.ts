@@ -12,7 +12,11 @@ import { AppRoutes, routes } from './app/app.routes';
 //
 // Services
 //
-import { PlayerService } from './app/services/api/player/player.service';
+import {
+  StorageService,
+  RequestService,
+  PlayerService
+} from './app/services/index';
 //
 // Pages
 //
@@ -28,6 +32,8 @@ export const appModule = {
   declarations: [AppComponent, IndexComponent, MainHeaderComponent],
   imports: [AppRoutes, HttpModule, BrowserModule],
   providers: [
+    RequestService,
+    StorageService,
     PlayerService,
     RouterTestingModule,
     { provide: APP_BASE_HREF, useValue: '/' },
