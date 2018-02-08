@@ -1,24 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Http, RequestOptions, Headers } from '@angular/http';
 import { Player } from '../../../models/player.model';
-import { RequestService } from '../../request.service';
 import { StorageService } from '../../storage.service';
 import { ResponseApi, Auth } from '../../../interfaces/index';
+import { JsonToForm, JsonToUrl } from '../../../helpers/request.helper';
 
 @Injectable()
 export class PlayerService {
+  private options = new RequestOptions();
   private url = '/player';
 
-  constructor(
-    public request: RequestService,
-    public storage: StorageService,
-  ) { }
+  constructor(private storage: StorageService, public http: Http) {
+    this.options.headers = new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+  }
 
   async login(id: string): Promise<ResponseApi<Auth>> {
-    return await (
-      this.request.post(`${this.url}/login`, { id })
-        .toPromise()
-        .then(response => response.json())
-    );
+    return await this.http
+      .post(`${this.url}/login`, JsonToUrl({ id }))
+      .toPromise()
+      .then(response => response.json());
   }
 
   loggout(): void {

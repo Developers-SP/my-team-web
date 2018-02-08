@@ -10,7 +10,6 @@ import { AppRoutes } from './app.routes';
 //
 import {
   StorageService,
-  RequestService,
   PlayerService
 } from './services/index';
 //
@@ -26,7 +25,7 @@ import { MainHeaderComponent } from './layout/index';
 @NgModule({
   declarations: [AppComponent, IndexComponent, MainHeaderComponent],
   imports: [AppRoutes, HttpModule, BrowserModule],
-  providers: [RequestService, StorageService, PlayerService],
+  providers: [StorageService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

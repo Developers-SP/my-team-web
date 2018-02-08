@@ -9,7 +9,7 @@ export class Player {
   public created: Date;
   public modified: Date;
 
-  constructor(player?: Object | Player) {
+  constructor(player?: Object | Player | any) {
     this.id = '';
     this.steam_name = '';
     this.email = '';
@@ -23,6 +23,8 @@ export class Player {
     if (!player) return;
 
     Object.assign(this, player);
+    this.created = new Date(player.created);
+    this.modified = new Date(player.modified);
   }
 
   public get logged() {

@@ -8,7 +8,7 @@ export class StorageService {
   }
 
   save(key: string, value: any): void {
-    localStorage.setItem(key, JSON.stringify({ type: typeof value, value }));
+    localStorage.setItem(key, JSON.stringify({ value }));
   }
 
   select(key: string): any {

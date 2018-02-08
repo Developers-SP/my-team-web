@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { appModule } from '../../test.tool';
+import { appModule, mocks } from '../../test.tool';
 import { Player } from './player.model';
 
 describe('PlayerModel', () => {
@@ -17,21 +17,11 @@ describe('PlayerModel', () => {
     expect(player.last_name).toEqual('');
     expect(player.active).toEqual(1);
     expect(player.avatar).toEqual('');
+    expect(player.logged).toEqual(false);
   });
 
   it('should be merge props', () => {
-    const data = new Date();
-    const _player = {
-      id: '1',
-      steam_name: 'WolfKillerJr',
-      email: 'coder.marcos@gmail.com',
-      first_name: 'Marcos Junior',
-      last_name: 'WolfKillerJr',
-      active: 1,
-      avatar: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/be/be27fbef1643893ce13b767c80ef0d69ddc728a6_full.jpg',
-      created: data,
-      modified: data
-    };
+    const _player = mocks.player;
 
     const player = new Player(_player);
     expect(player.id).toEqual(_player.id);
@@ -41,7 +31,18 @@ describe('PlayerModel', () => {
     expect(player.last_name).toEqual(_player.last_name);
     expect(player.active).toEqual(_player.active);
     expect(player.avatar).toEqual(_player.avatar);
-    expect(player.created).toEqual(data);
-    expect(player.modified).toEqual(data);
+
+    expect(player.created).toEqual(_player.created);
+    expect(player.modified).toEqual(_player.modified);
+    expect(player.logged).toEqual(true);
+  });
+
+  it('should be merge with correct types', () => {
+    const _player = mocks.player;
+
+    const player = new Player(_player);
+
+    expect(player.created instanceof Date).toBeTruthy();
+    expect(player.modified instanceof Date).toBeTruthy();
   });
 });

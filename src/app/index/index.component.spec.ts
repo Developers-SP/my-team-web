@@ -26,6 +26,13 @@ describe('IndexComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('has method authenticate',  () => {
+    expect(typeof component.authenticate).toBe('function');
+  });
+
+  it('has method getId', () => {
+    expect(typeof component.getId).toBe('function');
+  });
 
   it('should get id', () => {
     const params = {

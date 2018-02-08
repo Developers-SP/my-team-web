@@ -1,4 +1,3 @@
-
 import { URLSearchParams } from '@angular/http';
 export const JsonToForm = (json: Object): FormData => {
   const form = new FormData();
