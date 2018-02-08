@@ -4,11 +4,12 @@ import { Player } from '../../../models/player.model';
 import { StorageService } from '../../storage.service';
 import { ResponseApi, Auth } from '../../../interfaces/index';
 import { JsonToForm, JsonToUrl } from '../../../helpers/request.helper';
+import { environment } from '../../../../environments/environment';
 
 @Injectable()
 export class PlayerService {
   private options = new RequestOptions();
-  private url = '/player';
+  private url = `${environment.api}/player`;
 
   constructor(private storage: StorageService, public http: Http) {
     this.options.headers = new Headers({
@@ -18,7 +19,7 @@ export class PlayerService {
 
   async login(id: string): Promise<ResponseApi<Auth>> {
     return await this.http
-      .post(`${this.url}/login`, JsonToUrl({ id }))
+      .post(`${this.url}/login`, JsonToUrl({ id }), this.options)
       .toPromise()
       .then(response => response.json());
   }
