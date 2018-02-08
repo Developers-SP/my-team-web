@@ -11,7 +11,7 @@ git clone https://github.com/Developers-SP/my-team-web.git
 ```
 [3](#getting-started-3) Run this to install global's dependecies:
 ```bash
-npm run init
+npm run initial
 ```
 [4](#getting-started-4) Run this to install local dependecies:
 ```bash
