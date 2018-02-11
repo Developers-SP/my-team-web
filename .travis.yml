@@ -25,4 +25,4 @@ branches:
 before_script:
   - npm run build
 
-script: karma start config/karma.conf.js --single-run
+script: karma start karma.conf.js --single-run
