@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "9"
+branches:
+  only:
+  - develop
+script:
+  - npm run initial
+  - npm i 
+- npm test
