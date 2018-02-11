@@ -59,7 +59,7 @@ describe('MainHeaderComponent', () => {
   });
 
   it('show button login', () => {
-    element = fixture.debugElement.query(By.css('.main-header__sign'));
+    element = fixture.debugElement.query(By.css('.button--sign'));
     expect(element).toBeTruthy();
   });
 
