@@ -1,7 +1,9 @@
 sudo: required
+
 language: node_js
 node_js:
   - "8"
+
 addons:
   apt:
     sources:
@@ -15,10 +17,12 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - npm run initial
-  - npm run build
+
 branches:
   only:
   - develop
 
+before_script:
+  - npm run build
 
 script: karma start config/karma.conf.js --single-run
