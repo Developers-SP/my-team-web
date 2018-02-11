@@ -1,0 +1,102 @@
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+}
+
+.locale {
+  position: relative;
+  max-height: 48px;
+}
+
+.locale__language {
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  &.selecting, &.selected {
+    display: flex;
+    opacity: 1;
+    animation: display .5s ease-in-out;
+  }
+  &.selecting {
+    span {
+      display: initial;
+      opacity: 1;
+      animation: display .5s ease-in-out;
+    }
+  }
+  span {
+    margin-left: 15px;
+    display: none;
+  }
+}
+
+@-webkit-keyframes display {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: flex;
+      opacity: 0;
+  }
+
+  100% {
+      display: flex;
+      opacity: 1;
+  }
+}
+
+@-moz-keyframes display {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: flex;
+      opacity: 0;
+  }
+
+  100% {
+      display: flex;
+      opacity: 1;
+  }
+}
+
+@-o-keyframes display {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: flex;
+      opacity: 0;
+  }
+
+  100% {
+      display: flex;
+      opacity: 1;
+  }
+}
+
+@keyframes display {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: flex;
+      opacity: 0;
+  }
+
+  100% {
+      display: flex;
+      opacity: 1;
+  }
+}

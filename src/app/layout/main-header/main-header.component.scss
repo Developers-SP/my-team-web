@@ -7,16 +7,20 @@
   padding: 0 35px;
 }
 
+.main-header__badge {
+  max-height: 50px;
+  img {
+    position: relative;
+    top: -25px;
+    width: 100px;
+  }
+}
 .main-header__title {
-  font-size: $size_font_big;
+  display: none;
 }
 
-.main-header__actions {
-  align-items: center;
-  display: flex;
-  background-color: $color_dark_soft;
-  height: 100%;
-  padding: 10px 25px;
+.main-header__locale {
+  padding: 0 10px;
 }
 
 .main-header__sign {
@@ -26,12 +30,24 @@
   padding: 10px 0;
 }
 
+.profile__settings {
+  transition: .5s transform ease-in-out;
+  .icon {
+    font-size: 25px;
+  }
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
 .main-header__profile {
-
+  background-color: $color_dark_soft;
+  height: 100%;
+  padding: 10px 25px;
 }
 
 .profile__name {
   font-weight: 500;
+  font-size: 16px;
 }
 
 .profile__photo {
@@ -40,10 +56,11 @@
   width: 50px;
 }
 .profile__button {
-  font-size: 14px;
   padding: 0;
   .button__content {
     color: $color_contrast;
+    font-size: 14px;
+    font-weight: 400;
   }
   .icon {
     color: $color_contrast;

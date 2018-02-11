@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { PlayerService } from '../services/api/player/player.service';
 import { ResponseApi, Auth } from '../interfaces/index';
@@ -13,8 +13,9 @@ import { Player } from '../models/player.model';
 export class IndexComponent implements OnInit {
   constructor(
     private servicePlayer: PlayerService,
+    private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (this.servicePlayer.player.id.length === 17) return;
@@ -29,6 +30,12 @@ export class IndexComponent implements OnInit {
       .login(id)
       .then(
         (res: ResponseApi<Auth>) => (this.servicePlayer.player = res.result.player)
+      )
+      .then(
+        () => {
+          const url = this.router.url;
+          this.router.navigateByUrl(url.substr(0, url.indexOf('?')));
+        }
       )
       .catch((err: ResponseApi<any>) => console.exception(JSON.stringify(err)));
   }

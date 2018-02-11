@@ -1,27 +1,40 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, XHRBackend } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule, XHRBackend } from '@angular/http';
+import { TranslateService } from '@ngx-translate/core';
+import { NgModule } from '@angular/core';
+//
+// Traslations
+//
+import { HttpLoaderFactory } from './app/translate/loader.translate';
 //
 // Routes
 //
-import { AppRoutes, routes } from './app/app.routes';
+import { AppRoutes } from './app/app.routes';
 //
 // Services
 //
-import { StorageService, PlayerService } from './app/services/index';
+import {
+  StorageService,
+  PlayerService
+} from './app/services/index';
 //
 // Pages
 //
 import { AppComponent } from './app/app.component';
 import { IndexComponent } from './app/index/index.component';
 //
-// Layout
+// layout
 //
 import { MainHeaderComponent } from './app/layout/index';
+import { LanguageComponent } from './app/components/language/language.component';
 //
 // Models
 //
@@ -43,8 +56,20 @@ export const mocks = {
 };
 export const appModule = {
   schemas: [NO_ERRORS_SCHEMA],
-  declarations: [AppComponent, IndexComponent, MainHeaderComponent],
-  imports: [AppRoutes, HttpModule, BrowserModule],
+  declarations: [AppComponent, IndexComponent, MainHeaderComponent,LanguageComponent],
+  imports: [
+    AppRoutes,
+    HttpModule,
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
+  ],
   providers: [
     StorageService,
     PlayerService,

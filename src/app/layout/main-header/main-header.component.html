@@ -1,21 +1,37 @@
 <header class="row middle-xs between-xs main-header">
-  <a class="main-header__title" routerLink="/">My Team</a>
-  <section *ngIf="player.logged" class="main-header__actions">
-    <img class="profile__photo" src="{{player.avatar}}" alt="profil photo">
-    <div class="main-header__profile">
-      <span class="profile__name">{{player.steam_name}}</span>
-      <br>
-      <button class="profile__button button button--text" title="Sair da sua conta" (click)="loggout()">
-        <i class="icon icon-exit"></i>
-        <span class="button__content">Sair</span>
+  <a class="main-header__badge" title="{{ 'Ir para a pagina inicial' | translate }}" routerLink="/">
+    <img src="./images/my-team-logo.png" alt="My Team Logo">
+    <h1 class="main-header__title">My Team</h1>
+  </a>
+
+  <section class="row middle-xs main-header__actions">
+
+    <div class="main-header__locale">
+      <app-language></app-language>
+    </div>
+
+    <button *ngIf="!player.logged" class="button button--sign" title="{{ 'Entrar com sua conta da steam' | translate }}" (click)="login()">
+      <i class="icon icon-steam"></i>
+      <span class="button__content" translate>Entrar com steam</span>
+    </button>
+
+    <div *ngIf="player.logged" class="row middle-xs main-header__profile">
+      <img class="profile__photo" src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}">
+      <div class="profile__informations">
+        <span class="profile__name">{{player.steam_name}}</span>
+        <br>
+        <button class="profile__button button button--text" title="{{ 'Sair da sua conta' | translate }}" (click)="loggout()">
+          <i class="icon icon-exit"></i>
+          <span class="button__content" translate>Sair</span>
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="player.logged" class="row middle-xs main-header__settings">
+      <button class="profile__settings button button--text" title="{{ 'Configurações de conta' | translate }}" >
+        <i class="icon icon-settings"></i>
       </button>
     </div>
-  </section>
 
-  <section *ngIf="!player.logged" class="main-header__sign">
-    <button class="button button--sign" title="Entrar com sua conta da steam" (click)="login()">
-      <i class="icon icon-steam"></i>
-      <span class="button__content">Entrar com steam</span>
-    </button>
   </section>
 </header>

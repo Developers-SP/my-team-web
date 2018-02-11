@@ -9,7 +9,8 @@ import { Player } from '../../models/player.model';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent {
-  constructor(private servicePlayer: PlayerService) {}
+  constructor(
+    private servicePlayer: PlayerService) { }
 
   get player(): Player {
     return this.servicePlayer.player;

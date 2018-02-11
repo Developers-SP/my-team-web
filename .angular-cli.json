@@ -19,6 +19,11 @@
           "output": "./images/"
         },
         {
+          "glob": "**/*",
+          "input": "./assets/i18n",
+          "output": "./i18n/"
+        },
+        {
           "glob": "favicon.ico",
           "input": "./",
           "output": "./"

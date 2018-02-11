@@ -1,0 +1,18 @@
+<div *ngIf="selecting" (click)="selecting = false;" class="overlay"></div>
+<ul class="locale" (click)="selecting = !selecting;">
+  <li [ngClass]="selecting ? 'selecting':'' || language === 'en' ? 'selected':''" class="row middle-xs locale__language" title="Select language in English"
+    (click)="language = 'en'">
+    <img src="./images/traducao-ingles.png" alt="Inglish">
+    <span>English</span>
+  </li>
+  <li [ngClass]="selecting ? 'selecting':'' || language === 'es' ? 'selected':''" class="row middle-xs locale__language" title="Seleccionar idioma en español"
+    (click)="language = 'es'">
+    <img src="./images/traducao-espanhol.png" alt="Español">
+    <span>Español</span>
+  </li>
+  <li [ngClass]="selecting ? 'selecting':'' || language === 'pt' ? 'selected':''" class="row middle-xs locale__language" title="Selecionar idioma em português"
+    (click)="language = 'pt'">
+    <img src="./images/traducao-portugues.png" alt="Português">
+    <span>Português</span>
+  </li>
+</ul>
