@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { StorageService } from './storage.service';
 
-import { appModule } from '../../test.tool';
+import { appModule } from '../../../test.tool';
 
 describe('StorageService', () => {
   beforeEach(() => {

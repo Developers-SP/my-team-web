@@ -17,7 +17,8 @@ import { AppRoutes } from './app.routes';
 //
 import {
   StorageService,
-  PlayerService
+  PlayerService,
+  GuardService
 } from './services/index';
 //
 // Pages
@@ -29,9 +30,10 @@ import { IndexComponent } from './index/index.component';
 //
 import { MainHeaderComponent } from './layout/index';
 import { LanguageComponent } from './components/language/language.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
-  declarations: [AppComponent, IndexComponent, MainHeaderComponent, LanguageComponent],
+  declarations: [AppComponent, IndexComponent, MainHeaderComponent, LanguageComponent, PlayerComponent],
   imports: [
     AppRoutes,
     HttpModule,
@@ -45,7 +47,7 @@ import { LanguageComponent } from './components/language/language.component';
       }
     })
   ],
-  providers: [StorageService, PlayerService],
+  providers: [GuardService, StorageService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

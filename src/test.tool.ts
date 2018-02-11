@@ -23,7 +23,8 @@ import { AppRoutes } from './app/app.routes';
 //
 import {
   StorageService,
-  PlayerService
+  PlayerService,
+  GuardService
 } from './app/services/index';
 //
 // Pages
@@ -56,7 +57,7 @@ export const mocks = {
 };
 export const appModule = {
   schemas: [NO_ERRORS_SCHEMA],
-  declarations: [AppComponent, IndexComponent, MainHeaderComponent,LanguageComponent],
+  declarations: [AppComponent, IndexComponent, MainHeaderComponent, LanguageComponent],
   imports: [
     AppRoutes,
     HttpModule,
@@ -71,6 +72,7 @@ export const appModule = {
     })
   ],
   providers: [
+    GuardService,
     StorageService,
     PlayerService,
     RouterTestingModule,
