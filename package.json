@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "scripts": {
-    "initial": "npm i -g @angular/cli node-sass",
+    "initial": "npm i -g @angular/cli",
     "start": "ng serve --aot --open",
     "build": "ng build --prod",
     "test": "ng test",
