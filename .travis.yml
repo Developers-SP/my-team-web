@@ -1,3 +1,10 @@
+sudo: required
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 language: node_js
 node_js:
   - "8"
@@ -7,5 +14,4 @@ branches:
 before_script:
   - npm run initial
 script:
-  - npm i 
   - npm test
