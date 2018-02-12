@@ -18,22 +18,23 @@ import { AppRoutes } from './app.routes';
 import {
   StorageService,
   PlayerService,
-  GuardService
+  GuardService,
+  RoleService
 } from './services/index';
 //
 // Pages
 //
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
+import { PlayerComponent } from './player/player.component';
 //
 // layout
 //
 import { MainHeaderComponent } from './layout/index';
 import { LanguageComponent } from './components/language/language.component';
-import { PlayerComponent } from './player/player.component';
 
 @NgModule({
-  declarations: [AppComponent, IndexComponent, MainHeaderComponent, LanguageComponent, PlayerComponent],
+  declarations: [AppComponent, IndexComponent, PlayerComponent, MainHeaderComponent, LanguageComponent],
   imports: [
     AppRoutes,
     HttpModule,
@@ -47,7 +48,7 @@ import { PlayerComponent } from './player/player.component';
       }
     })
   ],
-  providers: [GuardService, StorageService, PlayerService],
+  providers: [RoleService, GuardService, StorageService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

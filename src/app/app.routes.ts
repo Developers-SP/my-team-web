@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { PlayerComponent } from './player/player.component';
 import { GuardService } from './services';
+import { RoleService } from './services/guard/role.service';
 
 export const routes: Routes = [
   {
@@ -10,34 +11,44 @@ export const routes: Routes = [
   },
 
   {
-    path: '/player/:steam_name',
+    path: 'player/:steam_name',
     component: PlayerComponent,
   },
   {
-    path: '/player/:steam_name/edit',
+    path: 'player/:steam_name/edit',
     component: PlayerComponent,
-    canActivate: [GuardService]
-  },
-
-  {
-    path: '/jogador/:steam_name' ,
-    component: PlayerComponent,
-  },
-  {
-    path: '/jogador/:steam_name/editar',
-    component: PlayerComponent,
-    canActivate: [GuardService]
+    canActivate: [RoleService],
+    data: {
+      role: 'playerProfile'
+    }
   },
 
   {
-    path: '/jugador/:steam_name' ,
+    path: 'jogador/:steam_name',
     component: PlayerComponent,
   },
   {
-    path: '/jugador/:steam_name/editar',
+    path: 'jogador/:steam_name/editar',
     component: PlayerComponent,
-    canActivate: [GuardService]
-  }
+    canActivate: [RoleService],
+    data: {
+      role: 'playerProfile'
+    }
+  },
+
+  {
+    path: 'jugador/:steam_name',
+    component: PlayerComponent,
+  },
+  {
+    path: 'jugador/:steam_name/editar',
+    component: PlayerComponent,
+    canActivate: [RoleService],
+    data: {
+      role: 'playerProfile'
+    }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 export const AppRoutes = RouterModule.forRoot(routes, {

@@ -4,7 +4,7 @@ import { PlayerService } from '../api/player/player.service';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 @Injectable()
-export class GuardService implements CanActivate {
+export class RoleService implements CanActivate {
 
   constructor(
     private playerService: PlayerService,
@@ -12,8 +12,14 @@ export class GuardService implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-    const logged = this.playerService.player.logged;
-    if (!logged) this.router.navigate(['/']);
-    return logged;
+    let role;
+    switch (route.data.role) {
+      case 'playerProfile':
+        const steam_name = route.params['steam_name'];
+        role = this.playerService.player.steam_name === steam_name;
+        if (!role) this.router.navigateByUrl(state.url.replace('/edit', '').replace('/editar', ''));
+        break;
+    }
+    return role;
   }
 }

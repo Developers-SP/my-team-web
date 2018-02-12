@@ -24,13 +24,15 @@ import { AppRoutes } from './app/app.routes';
 import {
   StorageService,
   PlayerService,
-  GuardService
+  GuardService,
+  RoleService
 } from './app/services/index';
 //
 // Pages
 //
 import { AppComponent } from './app/app.component';
 import { IndexComponent } from './app/index/index.component';
+import { PlayerComponent } from './app/player/player.component';
 //
 // layout
 //
@@ -57,7 +59,7 @@ export const mocks = {
 };
 export const appModule = {
   schemas: [NO_ERRORS_SCHEMA],
-  declarations: [AppComponent, IndexComponent, MainHeaderComponent, LanguageComponent],
+  declarations: [AppComponent, IndexComponent, PlayerComponent, MainHeaderComponent, LanguageComponent],
   imports: [
     AppRoutes,
     HttpModule,
@@ -72,6 +74,7 @@ export const appModule = {
     })
   ],
   providers: [
+    RoleService,
     GuardService,
     StorageService,
     PlayerService,

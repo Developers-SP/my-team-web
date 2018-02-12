@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { Player } from '../../../models/player.model';
-import { StorageService } from '../../storage.service';
+import { StorageService } from '../../storage/storage.service';
 import { ResponseApi, Auth } from '../../../interfaces/index';
 import { JsonToForm, JsonToUrl } from '../../../helpers/request.helper';
 import { environment } from '../../../../environments/environment';
