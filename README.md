@@ -1,5 +1,8 @@
-# My Team Web
+[![Build Status](https://travis-ci.org/Developers-SP/my-team-web.svg?branch=develop)](https://travis-ci.org/Developers-SP/my-team-web)
+![My Team](https://raw.githubusercontent.com/Developers-SP/my-team-web/develop/src/assets/images/my-team-logo-dark.png)
+<h1><center>My Team Web</center></h1>
 Application web to manager your team
+
 
 ### Getting Started 
 Use this commands to first run.
