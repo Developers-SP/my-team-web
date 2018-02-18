@@ -85,7 +85,7 @@ describe('MainHeaderComponent', () => {
     fixture.detectChanges();
 
     elementDOM = fixture.debugElement.query(By.css('.profile__name')).nativeElement;
-    expect(elementDOM.textContent).toBe(mocks.player.steam_name);
+    expect(mocks.player.steam_name).toBe(elementDOM.textContent.trim());
   });
 
 

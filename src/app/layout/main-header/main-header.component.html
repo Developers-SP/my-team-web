@@ -16,7 +16,7 @@
     </button>
 
     <div *ngIf="player.logged" class="row middle-xs main-header__profile">
-      <a class="profile__name" title="{{ 'Ir para seu perfil' | translate }}" routerLink="/{{ 'jogador' | translate }}/{{player.steam_name}}">
+      <a title="{{ 'Ir para seu perfil' | translate }}" routerLink="/{{ 'jogador' | translate }}/{{player.steam_name}}">
         <img class="profile__photo" src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}">
       </a>
       <div class="profile__informations">
