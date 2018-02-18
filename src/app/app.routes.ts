@@ -15,38 +15,12 @@ export const routes: Routes = [
     component: PlayerComponent,
   },
   {
-    path: 'player/:steam_name/edit',
-    component: PlayerComponent,
-    canActivate: [RoleService],
-    data: {
-      role: 'playerProfile'
-    }
-  },
-
-  {
     path: 'jogador/:steam_name',
     component: PlayerComponent,
   },
   {
-    path: 'jogador/:steam_name/editar',
-    component: PlayerComponent,
-    canActivate: [RoleService],
-    data: {
-      role: 'playerProfile'
-    }
-  },
-
-  {
     path: 'jugador/:steam_name',
     component: PlayerComponent,
-  },
-  {
-    path: 'jugador/:steam_name/editar',
-    component: PlayerComponent,
-    canActivate: [RoleService],
-    data: {
-      role: 'playerProfile'
-    }
   },
   { path: '**', redirectTo: '' }
 ];

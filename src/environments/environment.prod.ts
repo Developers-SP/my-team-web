@@ -1,7 +1,7 @@
 const steamUrl = 'http://steamcommunity.com/';
 export const environment = {
   production: true,
-  api: 'http://api.myteamcsgo.com',
+  api: 'http://api.my-team-csgo.com',
   url: 'http://my-team-csgo.com',
   steam: {
     url: steamUrl,

@@ -16,9 +16,13 @@
     </button>
 
     <div *ngIf="player.logged" class="row middle-xs main-header__profile">
-      <img class="profile__photo" src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}">
+      <a class="profile__name" title="{{ 'Ir para seu perfil' | translate }}" routerLink="/{{ 'jogador' | translate }}/{{player.steam_name}}">
+        <img class="profile__photo" src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}">
+      </a>
       <div class="profile__informations">
-        <span class="profile__name">{{player.steam_name}}</span>
+        <a class="profile__name" title="{{ 'Ir para seu perfil' | translate }}" routerLink="/{{ 'jogador' | translate }}/{{player.steam_name}}">
+          {{player.steam_name}}
+        </a>
         <br>
         <button class="profile__button button button--text" title="{{ 'Sair da sua conta' | translate }}" (click)="loggout()">
           <i class="icon icon-exit"></i>
@@ -28,7 +32,7 @@
     </div>
 
     <div *ngIf="player.logged" class="row middle-xs main-header__settings">
-      <button class="profile__settings button button--text" title="{{ 'Configurações de conta' | translate }}" >
+      <button class="profile__settings button button--text" title="{{ 'Configurações de conta' | translate }}">
         <i class="icon icon-settings"></i>
       </button>
     </div>
