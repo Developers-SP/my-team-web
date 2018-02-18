@@ -13,7 +13,7 @@
 
 <h2 align="center">My Team Web</h2>
 
-Application web to manager your team
+<p align="center">Application web to manager your team</p>
 
 
 ### Getting Started 
