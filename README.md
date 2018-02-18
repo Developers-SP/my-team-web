@@ -1,6 +1,16 @@
-[![Build Status](https://travis-ci.org/Developers-SP/my-team-web.svg?branch=develop)](https://travis-ci.org/Developers-SP/my-team-web)
-![My Team](https://raw.githubusercontent.com/Developers-SP/my-team-web/develop/src/assets/images/my-team-logo-dark.png)
-<h1><center>My Team Web</center></h1>
+
+<p align="center">
+  <a href="https://vuejs.org" target="_blank">
+    <img width="100" src="https://raw.githubusercontent.com/Developers-SP/my-team-web/develop/src/assets/images/my-team-logo-dark.png" alt="My Team">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/Developers-SP/my-team-web"><img src="https://travis-ci.org/Developers-SP/my-team-web.svg?branch=develop" alt="Build Status"></a>
+</p>
+
+<h2 align="center">My Team Web</h2>
+
 Application web to manager your team
 
 
