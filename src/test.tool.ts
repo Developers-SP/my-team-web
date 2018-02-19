@@ -24,8 +24,7 @@ import { AppRoutes } from './app/app.routes';
 import {
   StorageService,
   PlayerService,
-  GuardService,
-  RoleService
+  GuardService
 } from './app/services/index';
 //
 // Pages
@@ -74,7 +73,6 @@ export const appModule = {
     })
   ],
   providers: [
-    RoleService,
     GuardService,
     StorageService,
     PlayerService,

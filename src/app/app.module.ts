@@ -18,8 +18,7 @@ import { AppRoutes } from './app.routes';
 import {
   StorageService,
   PlayerService,
-  GuardService,
-  RoleService
+  GuardService
 } from './services/index';
 //
 // Pages

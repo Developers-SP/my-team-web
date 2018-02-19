@@ -2,7 +2,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { PlayerComponent } from './player/player.component';
 import { GuardService } from './services';
-import { RoleService } from './services/guard/role.service';
 
 export const routes: Routes = [
   {
