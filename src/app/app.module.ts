@@ -47,7 +47,7 @@ import { LanguageComponent } from './components/language/language.component';
       }
     })
   ],
-  providers: [RoleService, GuardService, StorageService, PlayerService],
+  providers: [GuardService, StorageService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

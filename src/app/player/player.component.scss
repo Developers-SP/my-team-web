@@ -1,0 +1,36 @@
+@import 'colors';
+@import 'sizes';
+
+.profile {
+  position: relative;
+  height: 275px;
+  width: 960px;
+
+  .profile__cover-change {
+    background-color: rgba(0, 0, 0, 0.0);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: background-color .4s ease-in-out;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      .profile__cover-change__button {
+        display: block;
+      }
+    }
+    .profile__cover-change__button {
+      background-color: $transparent;
+      border: 1.5px solid currentColor;
+      border-radius: 5px;
+      display: none;
+      padding: 10px 15px;
+      font-size: $size_font_middle;
+      font-weight: 600;
+      transition: background-color .4s ease-in-out;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}

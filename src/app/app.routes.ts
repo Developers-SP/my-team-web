@@ -10,15 +10,15 @@ export const routes: Routes = [
   },
 
   {
-    path: 'player/:steam_name',
+    path: 'Player/:steam_name',
     component: PlayerComponent,
   },
   {
-    path: 'jogador/:steam_name',
+    path: 'Jogador/:steam_name',
     component: PlayerComponent,
   },
   {
-    path: 'jugador/:steam_name',
+    path: 'Jugador/:steam_name',
     component: PlayerComponent,
   },
   { path: '**', redirectTo: '' }

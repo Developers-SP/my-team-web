@@ -1,4 +1,8 @@
 <app-main-header></app-main-header>
-<section class="profile__header">
-
-</section>
+<div class="row center-xs player">
+  <section class="profile" style="background-image: url('https://gamersclub.com.br/assets/images/capas/jogadores/default.jpg?1519075945');">
+    <div *ngIf="isProfileOwner" class="row center-xs middle-xs profile__cover-change">
+      <button class="profile__cover-change__button">EDITAR CAPA</button>
+    </div>
+  </section>
+</div>
