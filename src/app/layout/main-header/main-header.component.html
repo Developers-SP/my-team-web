@@ -1,10 +1,10 @@
-<header class="row middle-xs between-xs main-header">
+<header class="main-header">
   <a class="main-header__badge" title="{{ 'Ir para a pagina inicial' | translate }}" routerLink="/">
     <img src="./images/my-team-logo.png" alt="My Team Logo">
     <h1 class="main-header__title">My Team</h1>
   </a>
 
-  <section class="row middle-xs main-header__actions">
+  <section class="main-header__actions">
 
     <div class="main-header__locale">
       <app-language></app-language>
@@ -15,7 +15,7 @@
       <span class="button__content" translate>Entrar com steam</span>
     </button>
 
-    <div *ngIf="player.logged" class="row middle-xs main-header__profile">
+    <div *ngIf="player.logged" class="main-header__profile">
       <a title="{{ 'Ir para seu perfil' | translate }}" routerLink="/{{ 'Jogador' | translate }}/{{player.steam_name}}">
         <img class="profile__photo" src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}">
       </a>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div *ngIf="player.logged" class="row middle-xs main-header__settings">
+    <div *ngIf="player.logged" class="main-header__settings">
       <button class="profile__settings button button--text" title="{{ 'Configurações de conta' | translate }}">
         <i class="icon icon-settings"></i>
       </button>

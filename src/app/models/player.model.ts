@@ -1,24 +1,26 @@
 export class Player {
-  public id: string;
-  public steam_name: string;
-  public email: string;
-  public first_name: string;
-  public last_name: string;
   public active: number;
   public avatar: string;
+  public background_image: string;
   public created: Date;
+  public email: string;
+  public first_name: string;
+  public id: string;
+  public last_name: string;
   public modified: Date;
+  public steam_name: string;
 
   constructor(player?: Object | Player | any) {
-    this.id = '';
-    this.steam_name = '';
-    this.email = '';
-    this.first_name = '';
-    this.last_name = '';
     this.active = 1;
     this.avatar = '';
+    this.background_image = '';
     this.created = new Date();
+    this.email = '';
+    this.first_name = '';
+    this.id = '';
+    this.last_name = '';
     this.modified = this.created;
+    this.steam_name = '';
 
     if (!player) return;
 

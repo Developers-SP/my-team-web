@@ -1,4 +1,5 @@
 $transparent: transparent;
+$transparent-black: rgba(0, 0, 0, 0.5);
 
 $color_light: #efefff;
 $color_light_soft: #efefff;
@@ -12,3 +13,5 @@ $color_contrast: #7289da;
 $color_btn_sign: #43b581;
 
 $color_btn_outline: $transparent;
+
+$color_overlay_background_image: $transparent-black;

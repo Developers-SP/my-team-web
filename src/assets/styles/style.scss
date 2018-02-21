@@ -15,5 +15,6 @@ body {
   background-color: $color_dark_soft;
 }
 
+@import './components/animations';
 @import './components/button';
-@import './components/grid';
+// @import './components/grid';

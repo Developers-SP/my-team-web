@@ -1,8 +1,11 @@
 <app-main-header></app-main-header>
-<div class="row center-xs player">
-  <section class="profile" style="background-image: url('https://gamersclub.com.br/assets/images/capas/jogadores/default.jpg?1519075945');">
+<div class="player">
+  <section class="profile__cover" appStyles='{ "backgroundImage": "url({{player.background_image}})"}'>
     <div *ngIf="isProfileOwner" class="row center-xs middle-xs profile__cover-change">
-      <button class="profile__cover-change__button">EDITAR CAPA</button>
+      <button class="profile__cover-change__button" title="{{ 'Clique aqui para alterar sua capa' | translate }}" translate>ALTERAR CAPA</button>
     </div>
+  </section>
+  <section class="profile__informations">
+    <img src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}" class="profile__avatar__image">
   </section>
 </div>

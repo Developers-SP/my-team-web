@@ -12,24 +12,25 @@
 }
 
 .locale__language {
+  align-items: center;
   cursor: pointer;
   display: none;
   opacity: 0;
   &.selecting, &.selected {
+    animation: display .5s ease-in-out;
     display: flex;
     opacity: 1;
-    animation: display .5s ease-in-out;
   }
   &.selecting {
     span {
+      animation: display .5s ease-in-out;
       display: initial;
       opacity: 1;
-      animation: display .5s ease-in-out;
     }
   }
   span {
-    margin-left: 15px;
     display: none;
+    margin-left: 15px;
   }
 }
 

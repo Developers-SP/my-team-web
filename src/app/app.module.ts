@@ -21,6 +21,10 @@ import {
   GuardService
 } from './services/index';
 //
+// Directives
+//
+import { StylesDirective } from './directives/styles.directive';
+//
 // Pages
 //
 import { AppComponent } from './app.component';
@@ -33,7 +37,14 @@ import { MainHeaderComponent } from './layout/index';
 import { LanguageComponent } from './components/language/language.component';
 
 @NgModule({
-  declarations: [AppComponent, IndexComponent, PlayerComponent, MainHeaderComponent, LanguageComponent],
+  declarations: [
+    AppComponent,
+    IndexComponent,
+    PlayerComponent,
+    MainHeaderComponent,
+    LanguageComponent,
+    StylesDirective
+  ],
   imports: [
     AppRoutes,
     HttpModule,
