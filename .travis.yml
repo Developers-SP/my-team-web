@@ -21,12 +21,13 @@ before_script:
 - npm run build
 script:
 - karma start karma.conf.js --single-run
-- zip -r release.zip ./dist
 deploy:
   provider: releases
   api_key:
     secure: csdgYNHrogiG//OXRPXJwaf0hqLyLSAC8HL8AVXDrhINbnWftvQSBBHDSf4uW6nECwENbFYC0ypOPNoy3qX6iG24StSfwW0siwHw/V2+LaifEceIX2ug5kWb9uyzMOfg/DofqL4/6eDvkyGbG3h+9/rhAN968jhYHCHGGoDFmeGDwkLyDzehx9Ip/nxTBUaycuYCXnMMLgBYe3cCGKGk6MmW7pPUem3jrq1acBtGR7fdYjkZOoHqWYCbQEqc31lugZ7PP4KGzYCC9Laot8BdiR4L2hf1GfFShkKE1LlA6OXw5lLZD9/rkrPHYhIJgJmB9599XmQTAImcdVifltD5xiT0nE94gMCUHl1lOjOLhc+DWOEr/RCgRelK1csrzVdK6/RGTPd3s2WnXVDDCfA95k/Yktbcs4ET1HuC06PmD2KleWLCu9izNrq3Y2pmPqFE23/+gflNkZ/Lob73AJVLo6wXENGy08rKx2e3vmZiEtbwUHDd13S9TrPmalhWrZ+tRsDoOAWe7vFuYd4jOHVuOMSuLUJI6j4n0QerEnW5PXnngWwitG5o2JzeX+SOtXmWk0sWxHl1L9GIZMpNIcaQfMaD1LNBZ4Yjf8iKqKzzr4tnF4AxdfZh8eOZUR81Z9NASaKWzVQ/EEmzi7xDu1beLZv3nMMe8R8EUR2Zvmu9q6s=
-  file: release.zip
+  file_glob: true
+  file: dist/*
+  skip_cleanup: true
   on:
     repo: Developers-SP/my-team-web
     branch: release
