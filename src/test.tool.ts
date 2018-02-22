@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockBackend } from '@angular/http/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, ElementRef } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -26,6 +26,10 @@ import {
   PlayerService,
   GuardService
 } from './app/services/index';
+//
+// Directives
+//
+import { StylesDirective } from './app/directives/styles.directive';
 //
 // Pages
 //
@@ -58,7 +62,14 @@ export const mocks = {
 };
 export const appModule = {
   schemas: [NO_ERRORS_SCHEMA],
-  declarations: [AppComponent, IndexComponent, PlayerComponent, MainHeaderComponent, LanguageComponent],
+  declarations: [
+    AppComponent,
+    IndexComponent,
+    PlayerComponent,
+    MainHeaderComponent,
+    LanguageComponent,
+    StylesDirective
+  ],
   imports: [
     AppRoutes,
     HttpModule,

@@ -26,10 +26,10 @@
 .main-header__badge {
   max-height: 50px;
 }
-
-.main-header__title {
+.badge__title {
   display: none;
 }
+
 
 .main-header__locale {
   align-items: center;
@@ -44,13 +44,15 @@
 
 .profile__settings {
   transition: .5s transform ease-in-out;
-  .icon {
-    font-size: 25px;
-  }
   &:hover {
     transform: rotate(180deg);
   }
+  .icon-settings {
+    font-size: 20px;
+  }
 }
+
+
 .main-header__profile {
   align-items: center;
   background-color: $color_dark_soft;

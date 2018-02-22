@@ -32,3 +32,18 @@
     vertical-align: sub;
   }
 }
+
+.button--outline {
+  background-color: $transparent;
+  border: 1.5px solid currentColor;
+  font-size: $size_font_small;
+  font-weight: 500;
+  text-transform: uppercase;
+  &.to-green {
+    transition: background-color .4s ease-in-out;
+    &:hover {
+      background-color: $color_contrast;
+      border: none;
+    }
+  }
+}

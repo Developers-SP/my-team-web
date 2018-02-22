@@ -1,11 +1,19 @@
 <app-main-header></app-main-header>
-<div class="player">
+<div class="profile">
   <section class="profile__cover" appStyles='{ "backgroundImage": "url({{player.background_image}})"}'>
     <div *ngIf="isProfileOwner" class="row center-xs middle-xs profile__cover-change">
-      <button class="profile__cover-change__button" title="{{ 'Clique aqui para alterar sua capa' | translate }}" translate>ALTERAR CAPA</button>
+      <button class="button button--outline to-green" title="{{ 'Clique aqui para alterar sua capa' | translate }}" translate>ALTERAR CAPA</button>
     </div>
   </section>
   <section class="profile__informations">
-    <img src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}" class="profile__avatar__image">
+    <img class="informations__avatar" src="{{player.avatar}}" alt="{{ 'Foto de perfil' | translate }} {{player.steam_name}}">
+    <div class="informations__identity">
+      <h1 class="identity__names">
+        <span class="names__nick">{{player.steam_name}}</span><br>
+        <span class="names__real">{{player.first_name}} {{player.last_name}}</span>
+      </h1>
+
+      <p class="identity__status">Last play on {{player.modified.getHours()}}h {{player.modified.getMinutes()}}m</p>
+    </div>
   </section>
 </div>
