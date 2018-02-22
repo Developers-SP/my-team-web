@@ -21,6 +21,10 @@ before_script:
 - npm run build
 script:
 - karma start karma.conf.js --single-run
+before_deploy:
+- git config --local user.name "codermarcos"
+- git config --local user.email "coder.marcos@gmail.com"
+- git tag "$(cat package.json | grep version | awk -F":" '{print $2}' | sed 's/[", ]//g')"
 deploy:
   provider: releases
   api_key:
