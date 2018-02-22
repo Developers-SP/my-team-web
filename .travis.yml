@@ -29,4 +29,4 @@ deploy:
   file: release.zip
   on:
     repo: Developers-SP/my-team-web
-    branch: develop
+    branch: release
