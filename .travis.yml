@@ -24,7 +24,11 @@ script:
 before_deploy:
 - git config --local user.name "codermarcos"
 - git config --local user.email "coder.marcos@gmail.com"
-- git tag $(cat package.json | grep version | awk -F":" '{print $2}' | sed 's/[", ]//g')
+- git checkout release
+- cd ./dist
+- git add .
+- git commit -m "Release of version $(cat package.json | grep version | awk -F":" '{print $2}' | sed 's/[", ]//g')"
+- git push
 deploy:
   provider: releases
   api_key:
