@@ -30,4 +30,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: Developers-SP/my-team-web
+    tags: true
     branch: release
