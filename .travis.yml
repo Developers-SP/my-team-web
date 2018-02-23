@@ -25,6 +25,7 @@ script:
 - git config --local user.name "codermarcos"
 - git config --local user.email "coder.marcos@gmail.com"
 - git checkout -b release
+- git pull origin release
 - git add .
 - git branch
 - git commit -m "version $(cat package.json | grep version | awk -F\":\" '{print $2}' | sed 's/[\", ]//g')"
