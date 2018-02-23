@@ -26,5 +26,5 @@ script:
 - curl -u codermarcos:$access_token https://api.github.com/user
 - git checkout release
 - git add .
-- git commit -m "Release version $(cat package.json | grep version | awk -F":" '{print $2}' | sed 's/[", ]//g')"
+- git commit -m "Release version $(cat package.json | grep version | awk -F\":\" '{print $2}' | sed 's/[\", ]//g')"
 - git push
