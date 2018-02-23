@@ -21,7 +21,6 @@ before_script:
 # - npm run build
 script:
 - karma start karma.conf.js --single-run
-before_deploy:
 - echo Before Deploy Start
 - git config --local user.name "codermarcos"
 - git config --local user.email "coder.marcos@gmail.com"
