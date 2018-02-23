@@ -25,8 +25,8 @@ script:
 - git config --local user.name "codermarcos"
 - git config --local user.email "coder.marcos@gmail.com"
 - git tag $(cat package.json | grep version | awk -F":" '{print $2}' | sed 's/[", ]//g')
-- curl -u username:$access_token https://api.github.com/user
-- git push origin --tags
+- curl -u username:https://api.github.com/user
+- git push --tags -q https://$access_token@github.com/Developers-SP/my-team-web.git release
 deploy:
   provider: releases
   api_key:
