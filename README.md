@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/Developers-SP/my-team-web"><img src="https://travis-ci.org/Developers-SP/my-team-web.svg?branch=develop" alt="Build Status"></a>
+  <a href="https://circleci.com/gh/Developers-SP/my-team-web/tree/develop"><img src="https://circleci.com/gh/Developers-SP/my-team-web/tree/develop.svg?style=svg"></a>
   <a href="https://github.com/Developers-SP/my-team-web/issues"><img src="https://img.shields.io/github/issues/Developers-SP/my-team-web.svg" alt="Issues Open"></a>
   <a href="https://www.bithound.io/github/Developers-SP/my-team-web"><img src="https://www.bithound.io/github/Developers-SP/my-team-web/badges/score.svg" alt="bitHound Overall Score"></a>
   <a href="https://github.com/Developers-SP/my-team-web/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Developers-SP/my-team-web.svg" alt="License"></a>
