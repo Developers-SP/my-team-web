@@ -22,4 +22,4 @@ before_script:
 script:
 - karma start karma.conf.js --single-run
 after_success:
-- .travis/push
+- .travis/push.sh
