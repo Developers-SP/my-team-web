@@ -5,7 +5,7 @@
   "scripts": {
     "initial": "npm i -g @angular/cli",
     "start": "ng serve --aot --open",
-    "build": "ng build --prod",
+    "build": "ng build --prod --no-progress",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
