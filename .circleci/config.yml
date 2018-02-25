@@ -3,10 +3,9 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/node:9.3
+machine:
+  node:
+    version: 9.3
     working_directory: ~/repo
 
     steps:
@@ -35,4 +34,4 @@ jobs:
 
       - run:
           name: Run tests
-          command: sudo npm run test
+          command: sudo karma start karma.conf.js --single-run
