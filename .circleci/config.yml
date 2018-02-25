@@ -32,4 +32,4 @@ jobs:
 
       - run:
           name: Run tests
-          command: karma start karma.conf.js --single-run
+          command: npm run test
