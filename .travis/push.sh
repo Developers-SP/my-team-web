@@ -1,8 +1,8 @@
 #!/bin/sh
 
 commit() {
-  git config --global user.name "codermarcos"
-  git config --global user.email "coder.marcos@gmail.com"
+  git config user.name "Travis CI"
+  git config user.email "$COMMIT_AUTHOR_EMAIL"
   git checkout -b release origin/release
   git add . dist/*
   git commit -m "Release version $(cat package.json | grep version | awk -F\":\" '{print $2}' | sed 's/[\", ]//g')#$TRAVIS_BUILD_NUMBER"
