@@ -19,7 +19,7 @@ jobs:
 
       - run:
           name: Install dependecies
-          command: sudo npm i
+          command: sudo npm i --silent
 
       - save_cache:
           paths:
