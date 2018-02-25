@@ -18,11 +18,11 @@ jobs:
 
       - run:
           name: Install globals
-          command: npm run initial
+          command: sudo npm run initial
 
       - run:
           name: Install dependecies
-          command: npm run i
+          command: sudo npm run i
 
       - save_cache:
           paths:
@@ -31,8 +31,8 @@ jobs:
 
       - run:
           name: Make build
-          command: npm run build
+          command: sudo npm run build
 
       - run:
           name: Run tests
-          command: npm run test
+          command: sudo npm run test
