@@ -18,10 +18,6 @@ jobs:
           - dependencies-
 
       - run:
-          name: Install globals
-          command: sudo npm run initial
-
-      - run:
           name: Install dependecies
           command: sudo npm run i
 
