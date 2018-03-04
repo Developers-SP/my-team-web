@@ -5,7 +5,7 @@ import {
   AfterViewInit,
   SimpleChanges
 } from '@angular/core';
-import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
+import { OnChanges } from '@angular/core';
 @Directive({
   selector: '[appStyles]'
 })

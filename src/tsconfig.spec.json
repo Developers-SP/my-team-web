@@ -1,16 +1,34 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "app/*",
+        "environments/*"
+      ],
+      "src/*": [
+        "../src/*"
+      ],
+      "app/*": [
+        "../src/app/*"
+      ],
+      "environments/*": [
+        "../src/environments/*"
+      ]
+    },
     "outDir": "../out-tsc/spec",
-    "baseUrl": "./",
-    "module": "commonjs",
+    "module": "es2015",
     "types": [
       "jasmine",
       "node"
     ]
   },
   "files": [
-    "test.ts"
+    "test.ts",
+    "test.tool.ts"
   ],
   "rules": {
 

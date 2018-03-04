@@ -1,12 +1,14 @@
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './index/index.component';
-import { PlayerComponent } from './player/player.component';
-import { GuardService } from './services';
+
+import { GuardService } from 'app/services/guard/guard.service';
+
+import { HomeComponent } from 'app/pages/home/home.component';
+import { PlayerComponent } from 'app/pages/player/player.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: IndexComponent,
+    component: HomeComponent,
   },
 
   {

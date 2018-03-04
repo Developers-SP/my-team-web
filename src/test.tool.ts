@@ -1,13 +1,12 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MockBackend } from '@angular/http/testing';
 import { NO_ERRORS_SCHEMA, ElementRef } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, XHRBackend } from '@angular/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TranslateService } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 //
@@ -25,7 +24,7 @@ import {
   StorageService,
   PlayerService,
   GuardService
-} from './app/services/index';
+} from './app/services/';
 //
 // Directives
 //
@@ -33,14 +32,18 @@ import { StylesDirective } from './app/directives/styles.directive';
 //
 // Pages
 //
-import { AppComponent } from './app/app.component';
-import { IndexComponent } from './app/index/index.component';
-import { PlayerComponent } from './app/player/player.component';
+import { AppComponent } from 'app/app.component';
+import {
+  HomeComponent,
+  PlayerComponent
+} from 'app/pages/';
 //
 // layout
 //
-import { MainHeaderComponent } from './app/layout/index';
-import { LanguageComponent } from './app/components/language/language.component';
+import {
+  MainHeaderComponent,
+  LanguageComponent
+} from 'app/components/';
 //
 // Models
 //
@@ -64,7 +67,7 @@ export const appModule = {
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
     AppComponent,
-    IndexComponent,
+    HomeComponent,
     PlayerComponent,
     MainHeaderComponent,
     LanguageComponent,
@@ -72,9 +75,9 @@ export const appModule = {
   ],
   imports: [
     AppRoutes,
-    HttpModule,
     BrowserModule,
     HttpClientModule,
+    HttpClientTestingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -91,10 +94,6 @@ export const appModule = {
     {
       provide: APP_BASE_HREF,
       useValue: '/'
-    },
-    {
-      provide: XHRBackend,
-      useClass: MockBackend
     }
   ]
 };

@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from '../../environments/environment';
-import { PlayerService } from '../services/api/player/player.service';
-import { ResponseApi, Auth } from '../interfaces/index';
-import { Player } from '../models/player.model';
+import { environment } from 'environments/environment';
+import { PlayerService } from 'app/services/api/player/player.service';
+import { ResponseApi, Auth } from 'app/interfaces';
+import { Player } from 'app/models/player.model';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class IndexComponent implements OnInit {
+export class HomeComponent implements OnInit {
   constructor(
     private servicePlayer: PlayerService,
-    private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,16 +29,14 @@ export class IndexComponent implements OnInit {
 
     this.servicePlayer
       .login(id)
-      .then(
-        (res: ResponseApi<Auth>) => (this.servicePlayer.player = res.result.player)
-      )
-      .then(
+      .subscribe(
+        (res: ResponseApi<Auth>) => (this.servicePlayer.player = res.result.player),
+        (err: HttpErrorResponse) => console.exception(`${err.status}`, err.error),
         () => {
           const url = this.router.url;
           this.router.navigateByUrl(url.substr(0, url.indexOf('?')));
         }
-      )
-      .catch((err: ResponseApi<any>) => console.exception(JSON.stringify(err)));
+      );
   }
 
   getId(params: any): string {

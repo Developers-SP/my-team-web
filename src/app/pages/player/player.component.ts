@@ -1,8 +1,10 @@
-import { environment } from '../../environments/environment';
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'environments/environment';
 import { ActivatedRoute } from '@angular/router';
-import { PlayerService } from '../services/index';
-import { Player } from '../models/player.model';
+import { PlayerService } from 'app/services/index';
+import { Player } from 'app/models/player.model';
+import { ResponseApi, Profile } from 'interfaces';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-player',
@@ -12,7 +14,6 @@ import { Player } from '../models/player.model';
 export class PlayerComponent implements OnInit {
   private profile: Player;
   constructor(
-    private detection: ChangeDetectorRef,
     private playerService: PlayerService,
     private router: ActivatedRoute
   ) {}
@@ -30,7 +31,10 @@ export class PlayerComponent implements OnInit {
   getProfile() {
     this.playerService
       .get(this.player.steam_name)
-      .then(response => (this.profile = new Player(response.result.player)));
+      .subscribe(
+        (res: ResponseApi<Profile>) => (this.profile = new Player(res.result.player)),
+        (err: HttpErrorResponse) => console.exception(`${err.status}`, err.error)
+      );
   }
 
   get isProfileOwner(): Boolean {

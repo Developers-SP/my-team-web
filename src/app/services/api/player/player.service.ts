@@ -1,44 +1,56 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import { Player } from '../../../models/player.model';
-import { StorageService } from '../../storage/storage.service';
-import { ResponseApi, Auth, Profile } from '../../../interfaces/index';
-import { JsonToForm, JsonToUrl } from '../../../helpers/request.helper';
-import { environment } from '../../../../environments/environment';
+
+import { environment } from 'environments/environment';
+
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
+import { Player } from 'app/models/player.model';
+import { ResponseApi, Auth, Profile } from 'app/interfaces/index';
+
+import { StorageService } from 'app/services/storage/storage.service';
+
 
 @Injectable()
 export class PlayerService {
-  private options = new RequestOptions();
   private url = `${environment.api}/player`;
-
-  constructor(private storage: StorageService, public http: Http) {
-    this.options.headers = new Headers({
+  private options = {
+    headers: new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
-    });
+    })
+  };
+
+  constructor(
+    private storage: StorageService,
+    public http: HttpClient
+  ) { }
+
+  login(id: string): Observable<ResponseApi<Auth>> {
+
+    const params = new HttpParams()
+      .set('id', id);
+
+    return this.http
+      .post<ResponseApi<Auth>>(`${this.url}/login`, params, this.options);
   }
 
-  async login(id: string): Promise<ResponseApi<Auth>> {
-    return await this.http
-      .post(`${this.url}/login`, JsonToUrl({ id }), this.options)
-      .toPromise()
-      .then(response => response.json());
-  }
-
-  async get(id: string): Promise<ResponseApi<Profile>> {
-    return new Promise<ResponseApi<Profile>>((res, rej) => {
-      res({
+  get(id: string): Observable<Object> {
+    return new Observable<Object>((obs) => {
+      obs.next({
         status: 'OK',
         result: {
           player: new Player({
             steam_name: id,
-            background_image: 'http://cdn.akamai.steamstatic.com/steam/apps/730/ss_ccc4ce6edd4c454b6ce7b0757e633b63aa93921d.1920x1080.jpg?t=1513742714',
+            background_image: 'http://cdn.akamai.steamstatic.com/steam/apps/730/'
+              + 'ss_ccc4ce6edd4c454b6ce7b0757e633b63aa93921d.1920x1080.jpg?t=1513742714',
             id: 76561198121209165,
             email: null,
             first_name: null,
             last_name: null,
             active: 1,
             avatar:
-              'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/5d/5d82427acccb75bc31f945f65dec3dafd50cc0af_full.jpg',
+              'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/' +
+              +'5d/5d82427acccb75bc31f945f65dec3dafd50cc0af_full.jpg',
             created: '2018-02-05T11:47:19',
             modified: '2018-02-05T12:56:39'
           })

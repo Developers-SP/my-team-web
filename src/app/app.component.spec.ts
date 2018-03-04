@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-import { appModule } from '../test.tool';
+import { appModule } from 'src/test.tool';
 //
 // Component
 //

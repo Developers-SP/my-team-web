@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { environment } from '../../environments/environment';
-import { appModule } from '../../test.tool';
+import { environment } from 'environments/environment';
+import { appModule } from 'src/test.tool';
 //
 // Component
 //
-import { IndexComponent } from './index.component';
+import { HomeComponent } from './home.component';
 
 describe('IndexComponent', () => {
-  let component: IndexComponent;
-  let fixture: ComponentFixture<IndexComponent>;
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(
     async(() => {
@@ -17,7 +17,7 @@ describe('IndexComponent', () => {
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IndexComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
